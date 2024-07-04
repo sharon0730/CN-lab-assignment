@@ -1,1 +1,33 @@
+What is the value of prefix in link local address format?
+:Value of Link local address format is fe80::/64. The last 64 bits of the IPv6 address is known as the interface identifier and is derived from the 48-bit MAC address of the network adapter.
 
+
+
+
+What is the size of UDP header? What are different fields, describe each.
+:Size of UDP header is 8 bytes
+ Fields of UDP header are-
+ Source port : This field identifies the port number of the sending device. It is used to indicate the application or process that sent the datagram. If not used, it can be set to 0.
+ Destination port: This field identifies the port number of the receiving device. It specifies the application or process for which the datagram is intended.
+ Length:This field specifies the length of the UDP header and the encapsulated data. The minimum value for this field is 8, which indicates an empty data payload (just the header itself).
+ Checksum:This field is used for error-checking the header and data. It helps ensure the integrity of the datagram by allowing the receiver to verify that the data has not been corrupted during transmission. If the checksum is not used, this field can be set to 0.
+(each of them occupy 2bytes.)
+
+
+
+
+
+What is the size of TCP header? What are different fields, describe each.
+Size of TCP header is 20 to 60 bytes
+It's different fields are-
+>Source Port (16 bits): Identifies the application on the sending machine initiating the communication.
+>Destination Port (16 bits): Identifies the application on the receiving machine intended for the data.
+>Sequence Number (32 bits): Tracks the order of bytes sent within a TCP connection, ensuring data arrives in the correct sequence.
+>Acknowledgment Number (32 bits): Used by the receiver to acknowledge received data and request the next sequence of bytes.
+>Header Length (4 bits): Indicates the length of the TCP header in 32-bit words (minimum 5 words or 20 Bytes, maximum 15 words or 60 Bytes). This directly affects the overall header size.
+>Reserved data (3 bits): Reserved data in TCP headers always has a value of zero.
+>Control Flags (up to 9 bits): These flags signal different actions like starting a connection, ending a connection, acknowledging data, indicating urgent data, or controlling the flow of information.
+>Window Size (16 bits): Specifies the amount of data (in bytes) the receiver is willing to accept without further acknowledgment. Built-in algorithms dynamically adjust the window size for optimal data transfer.
+TCP Checksum (16 bits): Used for error detection in the header itself to ensure data integrity during transmission.
+>Urgent Pointer (16 bits): (Optional within the 20 bytes) Used to indicate if there is urgent data following the TCP header that needs immediate processing.
+>CP optional data (0 to 40 bytes): Usages of optional TCP data include support for special acknowledgment and window scaling algorithms.
