@@ -1,1 +1,1 @@
-# CN-lab-assignment
+# CN-lab assignments
