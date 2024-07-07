@@ -1,0 +1,40 @@
+Internet Protocol Version 4 (IPv4):
+Version: 4
+This indicates that the packet is using IPv4.
+
+Header Length: 20 bytes
+This specifies the length of the IP header. Since it’s 20 bytes, there are no options present.
+
+Differentiated Services Field: 0x00
+DSCP: CS0 (Class Selector 0)
+ECN: Not-ECT (Not ECN-Capable Transport)
+This field is used for Quality of Service (QoS) purposes.
+
+Total Length: 399 bytes
+This is the entire length of the IP packet, including both the header and the data.
+
+Identification: 0xefc3 (61379)
+This is an identifier for the group of fragments of a single IP datagram.
+
+Flags: 0x00
+Bit 0 (Reserved): 0 (must be zero)
+Bit 1 (Don't Fragment): 0
+Bit 2 (More Fragments): 0
+Since all flag bits are zero, this packet is not fragmented.
+Fragment Offset: 0
+
+This field is used if the IP packet is fragmented. In this case, it’s 0, indicating that this is not a fragment.
+Time to Live (TTL): 255
+This field specifies the maximum number of hops the packet can take before being discarded. The initial value of 255 is the maximum, suggesting it hasn't traversed any routers yet.
+
+Protocol: 17 (UDP)
+This indicates that the next layer protocol is UDP.
+
+Header Checksum: 0x27cc (validation disabled)
+This is used to verify the integrity of the IP header. In this case, validation is disabled.
+
+Source Address: 192.168.1.10
+This is the IP address of the sender.
+
+Destination Address: 224.0.0.251
+This is the IP address of the receiver. The address 224.0.0.251 is a multicast address used for mDNS (Multicast DNS).
